@@ -1,0 +1,23 @@
+workflows:
+  build-ios:
+    name: Build Cordova iOS app
+    instance_type: mac_mini
+    environment:
+      vars:
+        CORDOVA_PLATFORM: ios
+      node: 18.16.0
+      xcode: latest
+    scripts:
+      - npm install -g cordova
+      - npm install
+      - cordova platform add $CORDOVA_PLATFORM
+      - cordova build ios --release
+    artifacts:
+      - platforms/ios/build/**/*.ipa
+    publishing:
+      email:
+        recipients:
+          - ngocmaieth@gmail.com
+        notify:
+          success: true
+          failure: true
