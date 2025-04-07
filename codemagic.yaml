@@ -21,21 +21,3 @@ workflows:
         notify:
           success: true
           failure: true
-
-
-
-2. Thêm và push file lên GitHub:
-git add codemagic.yaml
-git commit -m "Add codemagic.yaml for iOS build"
-git push
-
-Chạy lệnh sau để push và set upstream luôn:
-git push --set-upstream origin main
-
-
-✅ Tiếp theo:
-Quay lại Codemagic
-
-Nhấn nút Check for configuration files
-
-Nếu nhận file codemagic.yaml, bạn sẽ thấy nút Start new build
